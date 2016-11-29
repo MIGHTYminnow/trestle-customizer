@@ -28,7 +28,7 @@ function activation_hook() {
 }
 
 //Disables plugin if another theme is activated.
-add_action('admin_init','disable_plugins');
+add_action('after_switch_theme','disable_plugins');
 function disable_plugins() {
 
 	$theme = wp_get_theme();;
