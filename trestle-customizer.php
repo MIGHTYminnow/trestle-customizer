@@ -28,8 +28,8 @@ function activation_hook() {
 }
 
 //Disables plugin if another theme is activated.
-add_action('after_switch_theme','disable_plugins');
-function disable_plugins() {
+add_action('after_switch_theme','trc_disable_plugins');
+function trc_disable_plugins() {
 
 	$theme = wp_get_theme();;
 	if ('Trestle' !== $theme->name ) {
