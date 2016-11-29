@@ -23,12 +23,12 @@ function activation_hook() {
 	$theme = wp_get_theme();
 	if ( 'Trestle' != $theme->name ) {
 		deactivate_plugins( plugin_basename( __FILE__ ) );
-		wp_die( 'Sorry, you can&rsquo;t activate unless you have activated Trestle' );
+		wp_die( 'Sorry, you can&rsquo;t activate unless you have installed Trestle' );
 	}
 }
 
 //Disables plugin if another theme is activated.
-add_action('admin_init','disable_plugins');
+add_action('after_switch_theme','disable_plugins');
 function disable_plugins() {
 
 	$theme = wp_get_theme();;
